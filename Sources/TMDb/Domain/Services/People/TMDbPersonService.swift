@@ -67,6 +67,7 @@ final class TMDbPersonService: PersonService {
         do {
             credits = try await apiClient.perform(request)
         } catch let error {
+            print("error: \(error)")
             throw TMDbError(error: error)
         }
 

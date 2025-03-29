@@ -56,10 +56,13 @@ struct PersonIntegrationTests {
         #expect(!credits.crew.isEmpty)
     }
 
-    @Test("movieCredits")
-    func movieCredits() async throws {
-        let personID = 500
-
+    @Test(
+        "movieCredits",
+        arguments: [
+            1, 500, 17696
+        ]
+    )
+    func movieCredits(personID: Int) async throws {
         let credits = try await personService.movieCredits(forPerson: personID)
 
         #expect(credits.id == personID)

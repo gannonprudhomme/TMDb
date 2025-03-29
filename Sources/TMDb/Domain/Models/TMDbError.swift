@@ -29,6 +29,7 @@ public enum TMDbError: Equatable, LocalizedError, Sendable {
     /// An error indicating there was a network problem.
     case network(Error)
 
+    // TODO: We should expose this error - why the fuck wouldn't we?
     /// An unknown error.
     case unknown
 
